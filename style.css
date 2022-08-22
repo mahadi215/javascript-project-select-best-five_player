@@ -30,6 +30,10 @@
 .card img{
     height: 200px;
 }
+.card button{
+    background-color: #8A1538;
+    color: white;
+}
 .player-select-box{
     border-radius: 5px;
     border: 2px silid whitesmoke;
@@ -45,6 +49,7 @@
     border-radius: 7px;
 
 }
+
 .input-box{
     display: flex;
     align-items: center;
