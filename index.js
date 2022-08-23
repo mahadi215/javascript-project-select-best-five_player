@@ -19,7 +19,7 @@ for( const button of buttons){
     }
     else{
        
-        alert('sorry you can not select more than five player')
+        alert('Sorry you can not select more than five player')
         return;
     }
     
