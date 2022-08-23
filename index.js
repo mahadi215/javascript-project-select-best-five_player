@@ -22,7 +22,7 @@ for( const button of buttons){
         alert('sorry you can not select more than five player')
         return;
     }
-    // console.log(selectedBox.children.length);
+    
     });
 };
 function getInputValue(inputId){
