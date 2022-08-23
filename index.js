@@ -16,19 +16,45 @@ for( const button of buttons){
         selectedBox.appendChild(playerList).innerText = player;
         setStyle(selectedBox);
         button.disabled = true;
-        
     }
     else{
        
         alert('sorry you can not select more than five player')
+        return;
     }
-    console.log(selectedBox.children.length);
+    // console.log(selectedBox.children.length);
     });
 };
-function countSelectedPlayer(id) {
-    const count = document.getElementById(id).children.length;
-    return count;
-}
- console.log(countSelectedPlayer('player-selected'));
+function getInputValue(inputId){
+    const inputValue = parseFloat(document.getElementById(inputId).value);
+    return inputValue;
+};
 
-// function
+ document.getElementById('player-expense-btn').addEventListener('click', function(){
+     const count = document.getElementById('player-selected').childElementCount;
+     const playerCostInput = getInputValue('perPlayerCost');
+    if (isNaN(playerCostInput)) {
+        alert('please enter amount in input field')
+    } else {
+     const playerExpense = count * playerCostInput;
+     const playerExpenseElement = document.getElementById('player-expense');
+     playerExpenseElement.innerText = playerExpense;
+    }
+ });
+
+ document.getElementById('total-btn').addEventListener('click', function(){
+     const previousPlayerCost = parseFloat(document.getElementById('player-expense').innerText);
+     if (previousPlayerCost === 0 ) {
+        alert('please first check and calculate player cost')
+     } 
+     else if( isNaN(getInputValue('manager-cost')) || isNaN(getInputValue('couch-cost')) ){
+        alert('please enter number in input field')
+     }
+     else {
+     const totalCost = getInputValue('manager-cost') + getInputValue('couch-cost') + previousPlayerCost;
+     const totalCostElement = document.getElementById('total-cost');
+     totalCostElement.innerText = totalCost;
+     }
+    
+ });
+
